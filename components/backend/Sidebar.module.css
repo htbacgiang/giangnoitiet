@@ -1,0 +1,259 @@
+/* Sidebar Component Styles */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  border-right: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    4px 0 24px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(0, 0, 0, 0.04);
+  overflow-y: auto;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar.dark {
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 50%, #020617 100%);
+  border-right: 1px solid rgba(51, 65, 85, 0.3);
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.02),
+    4px 0 24px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.2);
+  color: #f1f5f9;
+}
+
+/* Logo Section */
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 1.5rem;
+  padding: 1rem;
+}
+
+.logoContainer img {
+  transition: transform 0.3s ease;
+}
+
+.logoContainer:hover img {
+  transform: scale(1.05);
+}
+
+/* Navigation Links */
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 1.5rem 1rem;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.navLink:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(147, 51, 234, 0.08) 100%);
+  color: #3b82f6;
+  transform: translateX(6px);
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.navLink.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 8px 25px rgba(59, 130, 246, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.navLink.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 93, 151, 0.1) 100%);
+  z-index: -1;
+}
+
+.navLink.dark {
+  color: #94a3b8;
+  background: rgba(30, 41, 59, 0.5);
+  border-color: rgba(51, 65, 85, 0.3);
+}
+
+.navLink.dark:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(147, 51, 234, 0.15) 100%);
+  color: #60a5fa;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.navLink.dark.active {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: white;
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 
+    0 8px 25px rgba(59, 130, 246, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.navLink span {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.navLink svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Logout Button */
+.logoutContainer {
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+.logoutButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 12px rgba(239, 68, 68, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.logoutButton:hover {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(239, 68, 68, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.logoutButton:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 8px rgba(239, 68, 68, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.logoutButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.3) 0%, rgba(147, 51, 234, 0.3) 100%);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.6) 0%, rgba(147, 51, 234, 0.6) 100%);
+}
+
+/* Loading State */
+.loadingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  color: #3b82f6;
+  font-weight: 600;
+  font-size: 1.1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* Hover Effects */
+.navLink:hover svg {
+  transform: scale(1.1) rotate(2deg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+}
+
+.navLink.active svg {
+  animation: activePulse 2s infinite;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+}
+
+.logoutButton:hover svg {
+  transform: scale(1.1) rotate(-2deg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes activePulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.5));
+  }
+}
+
+/* Additional modern effects */
+.navLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.navLink:hover::before {
+  left: 100%;
+}
+
+.navLink.active::before {
+  display: none;
+}

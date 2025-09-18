@@ -1,0 +1,125 @@
+[
+    {
+        "id": 1,
+        "name": "Lê Bích Thủy",
+        "role": "MC/BTV chuyên nghiệp",
+        "imageUrl": "/images/bt.jpg",
+        "description": "MC/BTV với 8 năm kinh nghiệm trong lĩnh vực báo chí, truyền hình. Hiện đang làm việc tại Đài Truyền hình Kỹ thuật số VTC và Báo Xây dựng.",
+        "experience": "8+ năm kinh nghiệm",
+        "specialties": ["MC/BTV Truyền hình", "MC sự kiện", "Đào tạo MC", "Quản trị Báo chí Truyền thông"],
+        "achievements": [
+          "• MC/BTV Đài Truyền hình Kỹ thuật số VTC",
+          "• MC/BTV Báo Xây dựng",
+          "• Thạc sĩ Quản trị Báo chí Truyền thông",
+          "• 8 năm kinh nghiệm trong lĩnh vực báo chí, truyền hình",
+          "• 8 năm kinh nghiệm dẫn sự kiện",
+          "• 7 năm kinh nghiệm đào tạo trong lĩnh vực MC"
+        ],
+        "socialLinks": {
+          "facebook": "https://www.facebook.com/jerry.dcy",
+          "instagram": "https://www.instagram.com/jerry.dcy",
+          "linkedin": "#"
+        }
+      },
+  {
+    "id": 2,
+    "name": "Ngô Quang Trường",
+    "role": "Shipper ",
+    "imageUrl": "/images/truong.jpg",
+    "description": "Với hơn 15 năm kinh nghiệm trong lĩnh vực truyền hình và MC, thầy Trường đã đào tạo hàng nghìn học viên trở thành những MC chuyên nghiệp.",
+    "experience": "15+ năm kinh nghiệm",
+    "specialties": ["MC Truyền hình", "Dẫn chương trình", "Phát thanh viên", "Đào tạo kỹ năng giao tiếp"],
+    "achievements": [
+      "MC chính của nhiều chương trình truyền hình lớn",
+      "Đào tạo hơn 5000 học viên MC",
+      "Tác giả của nhiều khóa học MC online",
+      "Chuyên gia tư vấn cho các đài truyền hình"
+    ],
+    "socialLinks": {
+      "facebook": "https://www.facebook.com/www.truongnq.vn",
+      "linkedin": "#",
+      "youtube": "#"
+    }
+  },
+
+  {
+    "id": 3,
+    "name": "MC Hồng Quyên",
+    "role": "MC/BTV chuyên nghiệp",
+    "imageUrl": "/images/mc-hong-quyen-1.webp",
+    "description": "MC/BTV với 8 năm kinh nghiệm trong lĩnh vực báo chí, truyền hình. Hiện đang làm việc tại Truyền hình Quốc hội Việt Nam và Đài truyền hình Kỹ thuật số VTC.",
+    "experience": "8+ năm kinh nghiệm",
+    "specialties": ["MC/BTV Truyền hình", "MC sự kiện", "Đào tạo MC trẻ em", "Đào tạo MC người lớn"],
+    "achievements": [
+      "• MC/BTV Truyền hình Quốc hội Việt Nam",
+      "• MC/BTV Đài truyền hình Kỹ thuật số VTC", 
+      "• 6 năm kinh nghiệm làm MC sự kiện tại Bắc Giang và Hà Nội",
+      "• Chuyên gia đào tạo MC trẻ em và người lớn"
+    ],
+    "socialLinks": {
+      "facebook": "#",
+      "youtube": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Lê Thị Hương",
+    "role": "Giảng viên MC sự kiện",
+    "imageUrl": "/images/teacher-4.jpg",
+    "description": "Chuyên gia về MC sự kiện và tổ chức chương trình, với kinh nghiệm dẫn dắt hàng trăm sự kiện lớn nhỏ.",
+    "experience": "8+ năm kinh nghiệm",
+    "specialties": ["MC sự kiện", "Tổ chức chương trình", "Quản lý sự kiện", "Đào tạo MC sự kiện"],
+    "achievements": [
+      "MC của nhiều sự kiện lớn tại Hà Nội",
+      "Chuyên gia tổ chức sự kiện",
+      "Đào tạo MC cho các công ty event",
+      "Tác giả khóa học 'MC sự kiện chuyên nghiệp'"
+    ],
+    "socialLinks": {
+      "facebook": "#",
+      "instagram": "#",
+      "linkedin": "#"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Phạm Văn Hùng",
+    "role": "Giảng viên kỹ năng giao tiếp",
+    "imageUrl": "/images/teacher-5.jpg",
+    "description": "Chuyên gia về kỹ năng giao tiếp và thuyết phục, với kinh nghiệm đào tạo cho các doanh nghiệp và tổ chức.",
+    "experience": "13+ năm kinh nghiệm",
+    "specialties": ["Giao tiếp", "Thuyết phục", "Đàm phán", "Kỹ năng lãnh đạo"],
+    "achievements": [
+      "Chuyên gia tư vấn giao tiếp cho doanh nghiệp",
+      "Đào tạo kỹ năng mềm cho hàng nghìn nhân viên",
+      "Tác giả nhiều cuốn sách về giao tiếp",
+      "Diễn giả tại các hội thảo quốc tế"
+    ],
+    "socialLinks": {
+      "facebook": "#",
+      "linkedin": "#",
+      "youtube": "#"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Võ Thị Mai",
+    "role": "Giảng viên MC trẻ em",
+    "imageUrl": "/images/teacher-6.jpg",
+    "description": "Chuyên gia đào tạo MC cho trẻ em và thanh thiếu niên, với phương pháp giảng dạy thân thiện và hiệu quả.",
+    "experience": "7+ năm kinh nghiệm",
+    "specialties": ["MC trẻ em", "Đào tạo kỹ năng cho trẻ", "Tâm lý học trẻ em", "Phương pháp giảng dạy"],
+    "achievements": [
+      "Đào tạo MC trẻ em cho nhiều trường học",
+      "Chuyên gia tâm lý trẻ em",
+      "Tác giả chương trình MC Kids",
+      "Giảng viên được yêu thích nhất trong lĩnh vực đào tạo trẻ em"
+    ],
+    "socialLinks": {
+      "facebook": "#",
+      "instagram": "#",
+      "youtube": "#"
+    }
+  }
+]

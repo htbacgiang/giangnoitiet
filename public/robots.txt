@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Host
+Host: https://giangnoitiet.vn
+
+# Sitemaps - sử dụng sitemap index để quản lý tất cả
+Sitemap: https://giangnoitiet.vn/

@@ -1,0 +1,231 @@
+/* CSS đơn giản và gọn gàng cho trang giới thiệu */
+
+/* Animation mượt mà và nhẹ nhàng */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes subtleGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+  }
+}
+
+/* Classes animation đơn giản */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-from-right {
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-from-left {
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.animate-float {
+  animation: gentleFloat 4s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: subtleGlow 3s ease-in-out infinite;
+}
+
+/* Scroll mượt mà */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar đơn giản */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9fa;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* Focus states đơn giản */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Text gradient đẹp mắt */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effect nhẹ nhàng */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+/* Button styles đơn giản */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Container styles gọn gàng */
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+.content-max-width {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive đơn giản */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 3rem 1rem;
+  }
+  
+  .animate-fade-in,
+  .animate-slide-in-from-right,
+  .animate-slide-in-from-left {
+    animation-duration: 0.4s;
+  }
+  
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-padding {
+    padding: 2rem 0.75rem;
+  }
+  
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    animation: none !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Utility classes đơn giản */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 8px;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Tối ưu hóa cho performance */
+* {
+  box-sizing: border-box;
+}
+
+.will-change {
+  will-change: transform;
+}
+
+/* Giảm motion cho người dùng có preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

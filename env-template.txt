@@ -1,0 +1,45 @@
+# Copy nội dung này vào file .env.local
+
+# MongoDB
+MONGODB_URI=mongodb://localhost:27017/ecobacgiang
+
+# NextAuth
+NEXTAUTH_SECRET=your-secret-key-here-change-this
+NEXTAUTH_URL=https://ecobacgiang.vn
+
+# Sepay Configuration
+SEPAY_API_KEY=your_sepay_api_key_here
+
+# Cloudinary
+CLOUD_NAME=your-cloud-name
+CLOUD_API_KEY=your-api-key
+CLOUD_API_SECRET=your-api-secret
+CLOUD_UPDATE_PRESET=your-upload-preset
+CLOUD_API=https://api.cloudinary.com/v1_1/your-cloud-name/image/upload
+NEXT_PUBLIC_CLOUD_NAME=your-cloud-name
+CLOUDINARY_FOLDER=btacademy
+
+# Email Configuration - Google SMTP (App Password Only)
+# Cấu hình gửi email với Gmail App Password
+
+# === App Password Configuration ===
+# Bước 1: Bật 2-Step Verification cho Gmail
+# Bước 2: Tạo App Password trong Google Account
+# Bước 3: Sử dụng App Password thay vì mật khẩu thường
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-16-character-app-password
+
+# Admin email for notifications
+ADMIN_EMAIL=admin@btacademy.com
+
+# OAuth Providers (optional)
+FACEBOOK_ID=your-facebook-id
+FACEBOOK_SECRET=your-facebook-secret
+GOOGLE_ID=your-google-id
+GOOGLE_SECRET=your-google-secret
+GITHUB_CLIENT_ID=your-github-id
+GITHUB_CLIENT_SECRET=your-github-secret
+
+# Production Configuration
+# NEXT_PUBLIC_API_URL=https://yourdomain.com (for production)
+# NODE_ENV=production

@@ -9,10 +9,8 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
         
         {/* Global SEO Meta Tags */}
-        <meta name="theme-color" content="#ffffff" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="application-name" content="BT Academy" />
-        <meta name="apple-mobile-web-app-title" content="BT Academy" />
+        <meta name="application-name" content="Giang Nội Tiết" />
+        <meta name="apple-mobile-web-app-title" content="Giang Nội Tiết" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         

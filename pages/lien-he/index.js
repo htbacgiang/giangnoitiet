@@ -2,6 +2,7 @@ import Head from "next/head";
 import { MdLocationOn, MdEmail, MdPhone, MdAccessTime } from "react-icons/md";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import DefaultLayout from "../../components/layout/DefaultLayout";
+import { pageMetas } from "../../utils/metaUtils";
 
 // CSS Xanh lá siêu siêu gọn - Thu nhỏ
 const s = {
@@ -60,8 +61,12 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://giangnoitiet.vn";
 export default function ContactPage({ meta }) {
   return (
     <>
-
-      <DefaultLayout>
+      <DefaultLayout 
+        title={meta?.title}
+        desc={meta?.description}
+        thumbnail={meta?.og?.image}
+        meta={meta}
+      >
         {/* Hero Section */}
       <div className="h-[80px] bg-white"></div>
 
@@ -152,36 +157,9 @@ export default function ContactPage({ meta }) {
 }
 
 export async function getServerSideProps() {
-  const meta = {
-    title: "Liên Hệ – Giang Nội Tiết | Chuyên gia tư vấn tiểu đường thai kỳ",
-    description:
-      "Liên hệ với Giang Nội Tiết - Chuyên gia tư vấn tiểu đường thai kỳ và bệnh nội tiết. Đồng hành cùng phụ nữ có thai trước, trong và sau khi sinh. Hotline: +84 948 907 686, Địa chỉ: Đồng Sung, Đồng Tân, Ứng Hòa, Hà Nội.",
-    keywords:
-      "liên hệ, Giang Nội Tiết, tư vấn tiểu đường thai kỳ, bệnh nội tiết, phụ nữ có thai, Hà Nội, Ứng Hòa, +84 948 907 686, giangnoitiet.vn",
-    author: "Giang Nội Tiết",
-    robots: "index, follow",
-    canonical: `${BASE_URL}/lien-he`,
-    og: {
-      title: "Liên Hệ – Giang Nội Tiết | Chuyên gia tư vấn tiểu đường thai kỳ",
-      description:
-        "Liên hệ với Giang Nội Tiết để được tư vấn chuyên sâu về tiểu đường thai kỳ và bệnh nội tiết. Đồng hành cùng phụ nữ có thai trong suốt hành trình mang thai.",
-      type: "website",
-      image: `${BASE_URL}/images/anh-bia-giang-noi-tiet.jpg`,
-      imageWidth: "1200",
-      imageHeight: "630",
-      url: `${BASE_URL}/lien-he`,
-      siteName: "Giang Nội Tiết",
-      locale: "vi_VN",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: "Liên Hệ – Giang Nội Tiết | Chuyên gia tư vấn tiểu đường thai kỳ",
-      description:
-        "Liên hệ với Giang Nội Tiết để được tư vấn chuyên sâu về tiểu đường thai kỳ và bệnh nội tiết. Đồng hành cùng phụ nữ có thai trong suốt hành trình mang thai.",
-      image: `${BASE_URL}/images/anh-bia-giang-noi-tiet.jpg`,
-      site: "@giangnoitiet",
+  return {
+    props: { 
+      meta: pageMetas.contact 
     },
   };
-
-  return { props: { meta } };
 }

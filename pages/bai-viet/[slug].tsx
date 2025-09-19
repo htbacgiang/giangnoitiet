@@ -10,7 +10,6 @@ import Share from "../../components/common/Share";
 import Link from "next/link";
 import Image from "next/image";
 import { trimText } from "../../utils/helper";
-import Head from "next/head";
 
 type PostData = {
   id: string;
@@ -35,6 +34,8 @@ type PostData = {
 type MetaData = {
   title: string;
   description: string;
+  keywords: string;
+  robots: string;
   author: string;
   canonical: string;
   og: {
@@ -45,7 +46,6 @@ type MetaData = {
     imageWidth: string;
     imageHeight: string;
     url: string;
-    siteName: string;
   };
   twitter: {
     card: string;
@@ -63,8 +63,37 @@ type Props = {
 const SinglePost: NextPage<Props> = ({ post, meta }) => {
   // Add null/undefined checks to prevent errors
   if (!post) {
+    const errorMeta = {
+      title: "Bài viết không tồn tại | Giang Nội Tiết",
+      description: "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa. Hãy xem các bài viết khác về tiểu đường thai kỳ từ Giang Nội Tiết.",
+      keywords: "bài viết không tồn tại, tiểu đường thai kỳ, Giang Nội Tiết",
+      robots: "noindex, follow",
+      author: "Giang Nội Tiết",
+      canonical: "https://giangnoitiet.vn/bai-viet",
+      og: {
+        title: "Bài viết không tồn tại | Giang Nội Tiết",
+        description: "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa",
+        type: "website",
+        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
+        imageWidth: "1200",
+        imageHeight: "630",
+        url: "https://giangnoitiet.vn/bai-viet",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: "Bài viết không tồn tại | Giang Nội Tiết",
+        description: "Bài viết bạn đang tìm kiếm không tồn tại hoặc đã bị xóa",
+        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
+      },
+    };
+
     return (
-      <DefaultLayout>
+      <DefaultLayout 
+        title={errorMeta.title}
+        desc={errorMeta.description}
+        thumbnail={errorMeta.og.image}
+        meta={errorMeta}
+      >
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-gray-800">Bài viết không tồn tại</h1>
@@ -82,29 +111,12 @@ const SinglePost: NextPage<Props> = ({ post, meta }) => {
   const host = "https://giangnoitiet.vn";
 
   return (
-    <DefaultLayout>
-      <Head>
-        <title>{meta?.title || title || 'Bài viết'}</title>
-        <meta name="description" content={meta?.description || postMeta || ''} />
-        <meta name="author" content={meta?.author || 'Giang Nội Tiết'} />
-        <link rel="canonical" href={meta?.canonical || `https://giangnoitiet.vn/bai-viet/${slug}`} />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={meta?.og?.title || title || 'Bài viết'} />
-        <meta property="og:description" content={meta?.og?.description || postMeta || ''} />
-        <meta property="og:type" content={meta?.og?.type || 'article'} />
-        <meta property="og:url" content={meta?.og?.url || `https://giangnoitiet.vn/bai-viet/${slug}`} />
-        <meta property="og:image" content={meta?.og?.image || thumbnail || 'https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg'} />
-        <meta property="og:image:width" content={meta?.og?.imageWidth || '1200'} />
-        <meta property="og:image:height" content={meta?.og?.imageHeight || '630'} />
-        <meta property="og:site_name" content={meta?.og?.siteName || 'Giang Nội Tiết'} />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content={meta?.twitter?.card || 'summary_large_image'} />
-        <meta name="twitter:title" content={meta?.twitter?.title || title || 'Bài viết'} />
-        <meta name="twitter:description" content={meta?.twitter?.description || postMeta || ''} />
-        <meta name="twitter:image" content={meta?.twitter?.image || thumbnail || 'https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg'} />
-      </Head>
+    <DefaultLayout 
+      title={meta?.title}
+      desc={meta?.description}
+      thumbnail={meta?.og?.image}
+      meta={meta}
+    >
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row">
           {/* Main Content - 75% width on md and up */}
@@ -233,25 +245,26 @@ export const getServerSideProps: GetServerSideProps<
 
     const { _id, title, content, meta, slug, tags, thumbnail, category, createdAt } = post;
 
-    const metaData: MetaData = {
-      title,
-      description: meta,
+    const metaData = {
+      title: `${title} | Giang Nội Tiết`,
+      description: meta || `Đọc bài viết "${title}" về tiểu đường thai kỳ từ chuyên gia Giang Nội Tiết. Kiến thức chuyên môn, dễ hiểu, giúp mẹ bầu an tâm hơn.`,
+      keywords: `${title}, tiểu đường thai kỳ, Giang Nội Tiết, mẹ bầu, thai kỳ, sức khỏe, ${category}`,
+      robots: "index, follow",
       author: "Giang Nội Tiết",
       canonical: `https://giangnoitiet.vn/bai-viet/${slug}`,
       og: {
-        title,
-        description: meta,
+        title: `${title} | Giang Nội Tiết`,
+        description: meta || `Đọc bài viết "${title}" về tiểu đường thai kỳ từ chuyên gia Giang Nội Tiết`,
         type: "article",
         image: thumbnail?.url || "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
         imageWidth: "1200",
         imageHeight: "630",
         url: `https://giangnoitiet.vn/bai-viet/${slug}`,
-        siteName: "Giang Nội Tiết",
       },
       twitter: {
         card: "summary_large_image",
-        title,
-        description: meta,
+        title: `${title} | Giang Nội Tiết`,
+        description: meta || `Đọc bài viết "${title}" về tiểu đường thai kỳ từ chuyên gia Giang Nội Tiết`,
         image: thumbnail?.url || "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
       },
     };

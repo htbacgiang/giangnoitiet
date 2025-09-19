@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import DefaultLayout from '../../components/layout/DefaultLayout';
+import { pageMetas } from '../../utils/metaUtils';
 
 export default function HuongDanSuDungCongCu({ meta = {} }) {
   // JSON-LD Schema.org cho trang hướng dẫn sử dụng
@@ -40,42 +41,14 @@ export default function HuongDanSuDungCongCu({ meta = {} }) {
   };
 
   return (
-    <DefaultLayout meta={meta}>
+    <DefaultLayout 
+      title={meta?.title}
+      desc={meta?.description}
+      thumbnail={meta?.og?.image}
+      meta={meta}
+    >
       <Head>
-        <title>{meta?.title || "Hướng Dẫn Chi Tiết Sử Dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ"}</title>
-        <meta name="description" content={meta?.description || "Hướng dẫn từng bước cách sử dụng công cụ kiểm tra đường huyết của Giang Nội Tiết. Tìm hiểu cách nhập dữ liệu, đọc kết quả chính xác và theo dõi sức khỏe thai kỳ hiệu quả."} />
-        <meta name="keywords" content={meta?.keywords || "hướng dẫn sử dụng công cụ tiểu đường thai kỳ, cách kiểm tra đường huyết, theo dõi tiểu đường thai kỳ, giangnoitiet, Giang Nội Tiết"} />
-        <meta name="robots" content={meta?.robots || "index, follow"} />
-        <meta name="author" content="Giang Nội Tiết" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#059669" />
-        <meta name="msapplication-TileColor" content="#059669" />
-        <link rel="canonical" href={meta?.canonical || "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu"} />
-        
-        {/* Additional SEO meta tags */}
-        <meta name="geo.region" content="VN" />
-        <meta name="geo.placename" content="Hà Nội" />
-        <meta name="language" content="vi" />
-        <meta name="revisit-after" content="7 days" />
-
-        {/* Open Graph */}
-        <meta property="og:title" content={meta?.og?.title || "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết"} />
-        <meta property="og:description" content={meta?.og?.description || "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết"} />
-        <meta property="og:type" content={meta?.og?.type || "article"} />
-        <meta property="og:url" content={meta?.og?.url || "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu"} />
-        <meta property="og:image" content={meta?.og?.image || "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg"} />
-        <meta property="og:image:width" content={meta?.og?.imageWidth || "1200"} />
-        <meta property="og:image:height" content={meta?.og?.imageHeight || "630"} />
-        <meta property="og:image:alt" content="Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ - Giang Nội Tiết" />
-        <meta property="og:image:type" content="image/jpeg" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content={meta?.twitter?.card || "summary_large_image"} />
-        <meta name="twitter:title" content={meta?.twitter?.title || "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết"} />
-        <meta name="twitter:description" content={meta?.twitter?.description || "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết"} />
-        <meta name="twitter:image" content={meta?.twitter?.image || "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg"} />
-        
-        {/* JSON-LD */}
+        {/* JSON-LD HowTo Schema cho trang hướng dẫn */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -316,63 +289,18 @@ export default function HuongDanSuDungCongCu({ meta = {} }) {
 
 export async function getServerSideProps() {
   try {
-    const meta = {
-      title: "Hướng Dẫn Chi Tiết Sử Dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ",
-      description: "Hướng dẫn từng bước cách sử dụng công cụ kiểm tra đường huyết của Giang Nội Tiết. Tìm hiểu cách nhập dữ liệu, đọc kết quả chính xác và theo dõi sức khỏe thai kỳ hiệu quả.",
-      keywords: "hướng dẫn sử dụng công cụ tiểu đường thai kỳ, cách kiểm tra đường huyết, theo dõi tiểu đường thai kỳ, giangnoitiet, Giang Nội Tiết",
-      robots: "index, follow",
-      author: "Giang Nội Tiết",
-      canonical: "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu",
-      og: {
-        title: "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết",
-        description: "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết",
-        type: "article",
-        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
-        imageWidth: "1200",
-        imageHeight: "630",
-        url: "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu",
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết",
-        description: "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết",
-        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
-      },
-    };
-
     return {
-      props: { meta },
+      props: { 
+        meta: pageMetas.toolGuide 
+      },
     };
   } catch (error) {
     console.error('Error in getServerSideProps:', error);
     
-    // Fallback meta object
-    const fallbackMeta = {
-      title: "Hướng Dẫn Chi Tiết Sử Dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ",
-      description: "Hướng dẫn từng bước cách sử dụng công cụ kiểm tra đường huyết của Giang Nội Tiết. Tìm hiểu cách nhập dữ liệu, đọc kết quả chính xác và theo dõi sức khỏe thai kỳ hiệu quả.",
-      keywords: "hướng dẫn sử dụng công cụ tiểu đường thai kỳ, cách kiểm tra đường huyết, theo dõi tiểu đường thai kỳ, giangnoitiet, Giang Nội Tiết",
-      robots: "index, follow",
-      author: "Giang Nội Tiết",
-      canonical: "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu",
-      og: {
-        title: "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết",
-        description: "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết",
-        type: "article",
-        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
-        imageWidth: "1200",
-        imageHeight: "630",
-        url: "https://giangnoitiet.vn/huong-dan-su-dung-cong-cu",
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: "Hướng dẫn sử dụng Công Cụ Kiểm Tra Tiểu Đường Thai Kỳ | Giang Nội Tiết",
-        description: "Hướng dẫn chi tiết cách sử dụng công cụ kiểm tra tiểu đường thai kỳ từ Giang Nội Tiết",
-        image: "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
-      },
-    };
-
     return {
-      props: { meta: fallbackMeta },
+      props: { 
+        meta: pageMetas.toolGuide 
+      },
     };
   }
 }

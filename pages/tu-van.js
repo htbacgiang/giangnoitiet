@@ -1,17 +1,16 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import DefaultLayout from '../components/layout/DefaultLayout';
-export default function TuVan() {
+import { pageMetas } from '../utils/metaUtils';
+
+export default function TuVan({ meta }) {
   return (
-    <DefaultLayout>
-      <Head>
-        <title>Tư vấn chuyên gia tiểu đường thai kỳ - Giang Nội Tiết</title>
-        <meta name="description" content="Tư vấn trực tiếp với bác sĩ nội tiết chuyên khoa về tiểu đường thai kỳ. Đồng hành cùng phụ nữ có thai trước, trong và sau khi sinh. Hỗ trợ 24/7 với đội ngũ chuyên gia giàu kinh nghiệm." />
-        <meta name="keywords" content="tư vấn tiểu đường thai kỳ, bác sĩ nội tiết, chuyên gia, Giang Nội Tiết, phụ nữ có thai, trước sinh, sau sinh" />
-        <meta property="og:title" content="Tư vấn chuyên gia tiểu đường thai kỳ - Giang Nội Tiết" />
-        <meta property="og:description" content="Đồng hành cùng phụ nữ có thai trước, trong và sau khi sinh với chuyên gia nội tiết" />
-        <meta property="og:type" content="website" />
-      </Head>
+    <DefaultLayout 
+      title={meta?.title}
+      desc={meta?.description}
+      thumbnail={meta?.og?.image}
+      meta={meta}
+    >
       <div className="h-[80px]"></div>
 
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50 py-8">
@@ -150,4 +149,12 @@ export default function TuVan() {
       </div>
     </DefaultLayout>
   );
+}
+
+export async function getServerSideProps() {
+  return {
+    props: { 
+      meta: pageMetas.consultation 
+    },
+  };
 }

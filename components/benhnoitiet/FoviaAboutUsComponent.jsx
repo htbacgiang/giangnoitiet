@@ -27,7 +27,6 @@ const FoviaAboutUsComponent = () => {
                   <h3 className="text-xl lg:text-2xl font-semibold text-gray-800 mb-1">
                     Nguyễn Thị Hương Giang
                   </h3>
-                  <p className="text-emerald-600 font-medium">Điều dưỡng chuyên khoa Nội tiết sinh sản</p>
                 </div>
                 
                 {/* Description */}
@@ -100,7 +99,7 @@ const FoviaAboutUsComponent = () => {
                         Vậy còn chần chừ gì nữa?
                       </h3>
                       <p className="text-gray-700 leading-relaxed mb-4">
-                        Nếu bạn là mẹ bầu đang mắc tiểu đường thai kỳ, hay đơn giản chỉ mới mang thai và chưa test, hãy:
+                        Nếu bạn là mẹ bầu đang mắc tiểu đường thai kỳ, hay đơn giản chỉ mới mang thai. Hãy liên hệ với tôi ngay hôm nay để:
                       </p>
                       <div className="space-y-3">
                         <div className="flex items-start">
@@ -112,13 +111,38 @@ const FoviaAboutUsComponent = () => {
                           <span className="text-gray-700 font-semibold">Tham gia cộng đồng mẹ bầu TĐTK trên Zalo</span>
                         </div>
                       </div>
-                      <p className="text-gray-700 leading-relaxed mt-4">
-                        Nếu bạn chưa mắc tiểu đường thai kỳ, hãy theo dõi các bài viết trên website và fanpage Giang Nội Tiết để có được thông tin chính thống, dễ hiểu, dễ áp dụng.
-                      </p>
-                      <p className="text-emerald-700 font-semibold text-center mt-6 flex items-center justify-center">
-                        <span className="mr-2">💖</span>
-                        Chúc bạn có một thai kỳ khỏe mạnh và bình an.
-                      </p>
+                      
+                      {/* Contact Button */}
+                      <div className="flex justify-center mt-8">
+                        <a 
+                          href="https://m.me/giangnoitiet"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-bold text-white bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl shadow-2xl transition-all duration-300 ease-out hover:scale-105 hover:shadow-blue-500/50 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-300/50 no-underline"
+                        >
+                          {/* Background gradient animation */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                          
+                          {/* Shimmer effect */}
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                          
+                          {/* Button content */}
+                          <div className="relative flex items-center space-x-3">
+                            <div className="relative">
+                              {/* Messenger icon */}
+                              <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.373 0 0 4.975 0 11.111c0 3.497 1.745 6.616 4.472 8.652V24l4.086-2.242c1.09.301 2.246.464 3.442.464 6.627 0 12-4.974 12-11.111C24 4.975 18.627 0 12 0zm1.193 14.963l-3.056-3.259-5.963 3.259L10.732 8.1l3.13 3.259L19.732 8.1l-6.539 6.863z"/>
+                              </svg>
+                              {/* Online indicator */}
+                              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-400 border-2 border-white rounded-full animate-pulse"></div>
+                            </div>
+                            
+                            <span className="text-lg font-bold tracking-wide">Liên hệ ngay</span>
+                          </div>
+                          
+                        </a>
+                      
+                      </div>
                     </div>
                   </div>
                 </div>

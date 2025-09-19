@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash, FaGoogle, FaFacebook, FaCoffee } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { pageMetas } from "../utils/metaUtils";
 
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ const loginValidation = Yup.object({
   login_password: Yup.string().required("Vui lòng nhập mật khẩu."),
 });
 
-export default function Signin({ providers, callbackUrl, csrfToken }) {
+export default function Signin({ providers, callbackUrl, csrfToken, meta }) {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [status, setStatus] = useState("");
@@ -506,6 +507,7 @@ export async function getServerSideProps(context) {
       providers: providers || { google: {}, facebook: {} },
       csrfToken: csrfToken || null,
       callbackUrl,
+      meta: pageMetas.login,
     },
   };
 }

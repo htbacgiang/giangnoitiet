@@ -97,7 +97,6 @@ const Banner = () => {
 
       <div className="max-w-7xl mx-auto mt-24 md:mt-20 flex flex-col md:flex-row items-center justify-between relative z-10">
         <div className="text-center md:text-left mb-6 sm:mb-8 md:mb-0 w-full md:w-1/2">
-          <p className="inline-flex items-center gap-2 text-base sm:text-base font-medium text-emerald-700 mb-3 sm:mb-4 bg-white/70 px-3 py-1 rounded-full ring-1 ring-emerald-200 shadow-sm mx-auto md:mx-0">🌸 Đồng Hành Cùng Mẹ Bầu</p>
           <p className="text-xl md:text-[2rem] font-bold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-700 via-green-600 to-emerald-500">
             Chào Mừng Bạn Đến Với Giang Nội Tiết
           </p>
@@ -105,7 +104,7 @@ const Banner = () => {
             Nơi đồng hành cùng mẹ bầu trong hành trình vượt qua tiểu đường thai kỳ. Tại đây, bạn sẽ tìm thấy kiến thức y khoa dễ hiểu, thực đơn an toàn và những hướng dẫn chi tiết để kiểm soát đường huyết mỗi ngày. 💕
           </p>
           <div className="mt-4 sm:mt-5 px-3 py-4 bg-gradient-to-r from-emerald-50 to-green-50 rounded-xl ring-1 ring-emerald-200/50">
-            <p className="text-emerald-700 font-semibold text-sm sm:text-base mb-2">Để bắt đầu, mẹ có thể nhận ngay 2 món quà đặc biệt:</p>
+            <p className="text-emerald-700 font-semibold text-sm sm:text-base mb-2">Liên hệ ngay hôm để nhận ngay 2 món quà đặc biệt:</p>
             <ul className="text-slate-600 text-xs sm:text-base space-y-1 text-left">
               <li><strong>Thực đơn 7 ngày miễn phí</strong> – giúp mẹ dễ dàng kiểm soát đường huyết từng bữa ăn</li>
               <li><strong>Cộng đồng Zalo mẹ bầu TĐTK</strong> – nơi Giang đồng hành và chia sẻ cùng mẹ mỗi ngày</li>
@@ -113,13 +112,13 @@ const Banner = () => {
           </div>
           <div className="mt-4 sm:mt-6 flex flex-row sm:flex-row justify-center md:justify-start gap-3 sm:gap-4">
             <a
-              href="https://zalo.me/g/cwbnrr136"
+              href="https://m.me/giangnoitiet"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white px-5 sm:px-6 py-3 sm:py-3 rounded-xl shadow-lg shadow-emerald-500/20 ring-1 ring-emerald-300/60 hover:from-emerald-600 hover:to-emerald-800 hover:shadow-emerald-600/25 transition duration-300 text-base sm:text-base transform hover:-translate-y-0.5 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-emerald-400/60 text-center"
-              aria-label="Tham gia nhóm Zalo Ekip Giang Nội Tiết"
+              aria-label="Liên hệ qua Facebook Messenger"
             >
-             Zalo Giang Nội Tiết
+             Liên hệ ngay
             </a>
             <button
               onClick={() => setIsVideoOpen(true)}

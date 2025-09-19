@@ -107,7 +107,7 @@ const Footer = () => {
               </p>
               <ul className="space-y-3">
                 {[
-                  { href: "/gioi-thieu", label: "Về Giang Nội Tiết" },
+                  { href: "/gioi-thieu", label: "Giang Nội Tiết Là Ai" },
                   { href: "/cong-cu-kiem-tra-tieu-duong-thai-ky", label: "Công cụ kiểm tra" },
                   { href: "/bai-viet", label: "Bài viết y khoa" },
                   { href: "/lien-he", label: "Liên hệ" }

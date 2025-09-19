@@ -1,16 +1,15 @@
 import Head from 'next/head';
 import DefaultLayout from '../components/layout/DefaultLayout';
-export default function BaoMat() {
+import { pageMetas } from '../utils/metaUtils';
+
+export default function BaoMat({ meta }) {
   return (
-    <DefaultLayout>
-      <Head>
-        <title>Bảo mật dữ liệu - Giang Nội Tiết</title>
-        <meta name="description" content="Cam kết bảo mật dữ liệu người dùng với mã hóa SSL, tuân thủ GDPR và backup tự động. Dữ liệu sức khỏe tiểu đường thai kỳ được bảo vệ tuyệt đối." />
-        <meta name="keywords" content="bảo mật dữ liệu, SSL, GDPR, backup, Giang Nội Tiết, tiểu đường thai kỳ" />
-        <meta property="og:title" content="Bảo mật dữ liệu - Giang Nội Tiết" />
-        <meta property="og:description" content="Cam kết bảo mật dữ liệu sức khỏe tiểu đường thai kỳ với công nghệ tiên tiến" />
-        <meta property="og:type" content="website" />
-      </Head>
+    <DefaultLayout 
+      title={meta?.title}
+      desc={meta?.description}
+      thumbnail={meta?.og?.image}
+      meta={meta}
+    >
     <div className="h-[80px]"></div>
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-green-50 py-8">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -196,4 +195,12 @@ export default function BaoMat() {
       </div>
     </DefaultLayout>
   );
+}
+
+export async function getServerSideProps() {
+  return {
+    props: { 
+      meta: pageMetas.privacy 
+    },
+  };
 }

@@ -32,7 +32,7 @@ const ModernNavbar = () => {
 
   const navigationItems = [
     { name: "Trang chủ", href: "/", hasDropdown: false },
-    { name: "Về Giang Nội Tiết", href: "/gioi-thieu", hasDropdown: false },
+    { name: "Giang Nội Tiết Là Ai", href: "/gioi-thieu", hasDropdown: false },
     { name: "Công cụ", href: "/cong-cu-kiem-tra-tieu-duong-thai-ky", hasDropdown: false },
     { name: "Bài viết", href: "/bai-viet", hasDropdown: false },
     { name: "Liên hệ", href: "/lien-he", hasDropdown: false },

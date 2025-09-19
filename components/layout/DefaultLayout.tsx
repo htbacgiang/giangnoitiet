@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react';
-import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import Footer from '../common/Footer';
 import ModernNavbar from '../header/ModernNavbar';
@@ -11,10 +10,11 @@ interface Props {
   title?: string;
   desc?: string;
   thumbnail?: string;
+  meta?: any;
   children: ReactNode;
 }
 
-const DefaultLayout: FC<Props> = ({ title, desc, thumbnail, children }): JSX.Element => {
+const DefaultLayout: FC<Props> = ({ title, desc, thumbnail, meta, children }): JSX.Element => {
   return (
     <>
       <div className="min-h-screen bg-white transition">

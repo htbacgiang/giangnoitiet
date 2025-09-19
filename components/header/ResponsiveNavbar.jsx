@@ -15,7 +15,7 @@ const ResponsiveMenu = ({ isOpen, toggleMenu, onRegisterClick }) => {
 
   const menuItems = [
     { name: "Trang chủ", link: "/", icon: HiOutlineHome, hasDropdown: false },
-    { name: "Về Giang Nội Tiết", link: "/gioi-thieu", icon: FaRegUser, hasDropdown: false },
+    { name: "Giang Nội Tiết Là Ai", link: "/gioi-thieu", icon: FaRegUser, hasDropdown: false },
     { name: "Công cụ", link: "/cong-cu-kiem-tra-tieu-duong-thai-ky", icon: HiOutlineCalendar, hasDropdown: false },
     { name: "Bài viết", link: "/bai-viet", icon: HiOutlineDocumentText, hasDropdown: false },
     { name: "Liên hệ", link: "/lien-he", icon: HiOutlinePhone, hasDropdown: false },

@@ -8,6 +8,7 @@ import Router from "next/router";
 import { FaUser, FaLock, FaEye, FaEyeSlash, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { pageMetas } from "../utils/metaUtils";
 import axios from "axios";
 
 // Schema validation với Yup
@@ -32,7 +33,7 @@ const signupValidation = Yup.object({
     .oneOf([true], "Bạn phải đồng ý với Điều khoản & Chính sách bảo mật."),
 });
 
-export default function Signup({ csrfToken }) {
+export default function Signup({ csrfToken, meta }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [status, setStatus] = useState("");
@@ -461,6 +462,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       csrfToken: csrfToken || null,
+      meta: pageMetas.register,
     },
   };
 }

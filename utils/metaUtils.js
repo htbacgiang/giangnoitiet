@@ -1,4 +1,54 @@
 // utils/metaUtils.js
+
+// Function to create dynamic site navigation with recent posts
+export function createSiteNavigation(posts = []) {
+  const baseNavigation = [
+    {
+      "@type": "SiteNavigationElement",
+      "position": 1,
+      "name": "Giới thiệu",
+      "description": "Người đồng hành cùng mẹ bầu tiểu đường thai kỳ",
+      "url": "https://giangnoitiet.vn/gioi-thieu"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 2, 
+      "name": "Công cụ kiểm tra",
+      "description": "Công cụ kiểm tra tiểu đường thai kỳ miễn phí",
+      "url": "https://giangnoitiet.vn/cong-cu-kiem-tra-tieu-duong-thai-ky"
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "position": 3,
+      "name": "Liên hệ",
+      "description": "Thông tin liên hệ và hỗ trợ 24/7",
+      "url": "https://giangnoitiet.vn/lien-he"
+    }
+  ];
+
+  // Thêm 2 bài viết gần nhất nếu có
+  if (posts && posts.length >= 2) {
+    baseNavigation.push(
+      {
+        "@type": "SiteNavigationElement",
+        "position": 4,
+        "name": posts[0]?.title?.substring(0, 50) || 'Bài viết mới nhất',
+        "description": posts[0]?.meta?.substring(0, 60) || 'Bài viết mới nhất về tiểu đường thai kỳ',
+        "url": `https://giangnoitiet.vn/bai-viet/${posts[0]?.slug || ''}`
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 5,
+        "name": posts[1]?.title?.substring(0, 50) || 'Bài viết thứ 2',
+        "description": posts[1]?.meta?.substring(0, 60) || 'Bài viết gần đây về tiểu đường thai kỳ',
+        "url": `https://giangnoitiet.vn/bai-viet/${posts[1]?.slug || ''}`
+      }
+    );
+  }
+
+  return baseNavigation;
+}
+
 export function createPageMeta({
   title,
   description,
@@ -45,7 +95,7 @@ export const pageMetas = {
   }),
   
   about: createPageMeta({
-    title: "Người đồng hành cùng mẹ bầu tiểu đường thai kỳ",
+    title: "Đồng hành cùng mẹ bầu tiểu đường thai kỳ",
     description: "Giang Nội Tiết là kênh chuyên cung cấp kiến thức chính thống, dễ hiểu về tiểu đường thai kỳ. Giúp mẹ bầu bớt hoang mang, biết cách theo dõi và kiểm soát đường huyết hằng ngày để có thai kỳ khỏe mạnh.",
     keywords: "Giang Nội Tiết, tiểu đường thai kỳ, mẹ bầu, kiểm soát đường huyết, tư vấn thai kỳ, điều dưỡng nội tiết, sức khỏe thai kỳ, đồng hành mẹ bầu",
     canonicalPath: "/gioi-thieu",

@@ -54,13 +54,7 @@ const ServicesComponent = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full ring-1 ring-teal-200/50 shadow-sm">
-              <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-              <span className="text-teal-700 font-medium">Dịch Vụ Chuyên Khoa</span>
-              <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse delay-500"></div>
-            </div>
-          </div>
+         
           <h2 className="text-3xl md:text-4xl font-bold mb-2">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-600">
               Dịch Vụ Hỗ Trợ Tiểu Đường Thai Kỳ

@@ -1,99 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Trang chủ - ưu tiên cao nhất -->
+  <!-- Homepage - Highest Priority -->
   <url>
-    <loc>https://giangnoitiet.vn/</loc>
+    <loc>https://giangnoitiet.vn</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
   </url>
   
-  <!-- Các trang chính của website -->
+  <!-- Main Navigation Pages - High Priority -->
   <url>
     <loc>https://giangnoitiet.vn/gioi-thieu</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://giangnoitiet.vn/lien-he</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://giangnoitiet.vn/bai-viet</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <!-- Trang đăng ký/đăng nhập -->
-  <url>
-    <loc>https://giangnoitiet.vn/dang-ky</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://giangnoitiet.vn/dang-nhap</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <!-- Trang tư vấn và công cụ -->
-  <url>
-    <loc>https://giangnoitiet.vn/tu-van</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
+    <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://giangnoitiet.vn/cong-cu-kiem-tra-tieu-duong-thai-ky</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://giangnoitiet.vn/lien-he</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
+  </url>
+  
+  <!-- Secondary Pages - Medium Priority -->
+  <url>
+    <loc>https://giangnoitiet.vn/tu-van</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://giangnoitiet.vn/huong-dan-su-dung-cong-cu</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
+    <priority>0.5</priority>
   </url>
   
-  <!-- Các trang chính sách -->
   <url>
-    <loc>https://giangnoitiet.vn/chinh-sach-bao-mat</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
+    <loc>https://giangnoitiet.vn/bai-viet</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
+  <!-- Auth Pages - Medium Priority -->
+  <url>
+    <loc>https://giangnoitiet.vn/dang-nhap</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://giangnoitiet.vn/dang-ky</loc>
+    <lastmod>2025-01-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Legal Pages - Lower Priority -->
   <url>
     <loc>https://giangnoitiet.vn/bao-mat</loc>
+    <lastmod>2025-01-19</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
   </url>
-  
-  <!-- Trang auth -->
-  <url>
-    <loc>https://giangnoitiet.vn/auth/quen-mat-khau</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://giangnoitiet.vn/auth/dat-lai-mat-khau</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-    <lastmod>2025-09-18T00:00:00.000Z</lastmod>
-  </url>
+</urlset>
 </urlset>

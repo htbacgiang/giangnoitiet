@@ -5,21 +5,15 @@ import { BookOpen, Heart, Users, Stethoscope, Baby } from 'lucide-react';
 export default function ValuesSection({ title, features, imageSrc }) {
   
   return (
-    <section className="py-10 bg-gradient-to-br from-slate-50 via-white to-teal-50/30 relative overflow-hidden">
+    <section className="py-10 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-48 h-48 bg-gradient-to-br from-teal-100/20 to-emerald-100/20 rounded-full blur-3xl -translate-x-24 -translate-y-24"></div>
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-br from-emerald-100/20 to-teal-100/20 rounded-full blur-3xl translate-x-32 translate-y-32"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
-            <div className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm px-3 py-1.5 rounded-full ring-1 ring-teal-200/50 shadow-sm">
-              <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
-              <span className="text-teal-700 font-medium  ">Giá Trị Cốt Lõi</span>
-              <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse delay-500"></div>
-            </div>
-          </div>
+        <div className="text-center mb-4">
+         
           <p className="text-3xl md:text-4xl font-bold mb-4">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-700 via-emerald-600 to-teal-600">
               {title}

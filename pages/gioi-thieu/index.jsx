@@ -88,12 +88,12 @@ export default function AboutUs({ meta }) {
       Giang Nội Tiết - Người đồng hành cùng mẹ bầu tiểu đường thai kỳ
       </h1>
       <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto ">
           <FoviaAboutUsComponent />
         </div>
       </section>
-      <section className="py-8 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="">
+        <div className="container mx-auto ">
           <FreelancerComponent />
           <FAQComponent />
           <NewsletterSignup />

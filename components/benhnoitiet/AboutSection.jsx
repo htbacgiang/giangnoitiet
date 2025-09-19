@@ -58,7 +58,7 @@ export default function AboutSection() {
 
           {/* Right Side - Text and Buttons */}
           <div className="space-y-3 relative">
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center">
               <div className="inline-flex items-center gap-3 bg-white/70 backdrop-blur-sm px-4 py-2 rounded-full ring-1 ring-teal-200/50 shadow-sm">
                 <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
                 <span className="text-teal-700 font-medium text-sm sm:text-base">Về Giang Nội Tiết</span>

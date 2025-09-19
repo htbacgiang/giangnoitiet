@@ -11,10 +11,7 @@ const HeroSectionBlog = ({ label = 'Blog Tiểu Đường Thai Kỳ', heading = 
         <div className="absolute top-10 right-10 w-32 h-32 bg-emerald-200/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-40 h-40 bg-green-200/20 rounded-full blur-3xl"></div>
       </div>
-      {/* Label */}
-      <div className="relative z-10 text-emerald-700 font-medium  tracking-wider mb-3 bg-white/80 backdrop-blur-sm px-6 py-2 rounded-full shadow-lg border border-emerald-200 ring-1 ring-emerald-100">
-        {label}
-      </div>
+  
       {/* Main Heading */}
       <h2
         id="hero-heading"

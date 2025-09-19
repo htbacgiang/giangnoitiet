@@ -11,6 +11,7 @@ import { persistStore } from "redux-persist";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
+import { createSiteNavigation } from "../utils/metaUtils";
 
 let persistor = persistStore(store);
 // Khởi tạo font Rajdhani từ Google Fonts
@@ -20,7 +21,7 @@ const rajdhani = Rajdhani({
   display: "swap",
   variable: "--ltn__heading-font",
 });
-  function MyApp({ Component, pageProps: { session, meta, ...pageProps } }) {
+  function MyApp({ Component, pageProps: { session, meta, posts, ...pageProps } }) {
   
   return (
       <>
@@ -58,35 +59,67 @@ const rajdhani = Rajdhani({
               <meta name="twitter:description" content={meta.twitter.description} />
               <meta name="twitter:image" content={meta.twitter.image} />
               
-              {/* JSON-LD */}
+              {/* JSON-LD Organization + Website */}
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
-                  __html: JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "MedicalOrganization",
-                    "name": "Giang Nội Tiết",
-                    "url": "https://giangnoitiet.vn",
-                    "logo": "https://giangnoitiet.vn/logo-giang-noi-tiet-2.png",
-                    "image": "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
-                    "description": "Giang Nội Tiết – Chuyên gia tư vấn tiểu đường thai kỳ MIỄN PHÍ cho phụ nữ mang thai. Hướng dẫn kiểm soát đường huyết, chế độ ăn uống và chăm sóc sức khỏe.",
-                    "sameAs": ["https://www.facebook.com/giangnoitiet"],
-                    "contactPoint": {
-                      "@type": "ContactPoint",
-                      "telephone": "+84948907686",
-                      "contactType": "customer service",
-                      "areaServed": "VN",
-                      "availableLanguage": ["Vietnamese"],
-                      "serviceType": "Tư vấn tiểu đường thai kỳ miễn phí"
+                  __html: JSON.stringify([
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "MedicalOrganization",
+                      "@id": "https://giangnoitiet.vn/#organization",
+                      "name": "Giang Nội Tiết",
+                      "alternateName": "Giang Noi Tiet",
+                      "url": "https://giangnoitiet.vn",
+                      "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://giangnoitiet.vn/logo-giang-noi-tiet-2.png",
+                        "width": 200,
+                        "height": 200
+                      },
+                      "image": "https://giangnoitiet.vn/images/anh-bia-giang-noi-tiet.jpg",
+                      "description": "Giang Nội Tiết – Chuyên gia tư vấn tiểu đường thai kỳ MIỄN PHÍ cho phụ nữ mang thai. Hướng dẫn kiểm soát đường huyết, chế độ ăn uống và chăm sóc sức khỏe.",
+                      "sameAs": ["https://www.facebook.com/giangnoitiet"],
+                      "contactPoint": {
+                        "@type": "ContactPoint",
+                        "telephone": "+84948907686",
+                        "contactType": "customer service",
+                        "areaServed": "VN",
+                        "availableLanguage": ["Vietnamese"],
+                        "serviceType": "Tư vấn tiểu đường thai kỳ miễn phí"
+                      },
+                      "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Đồng Xung, Đồng Tân",
+                        "addressLocality": "Ứng Hòa",
+                        "addressRegion": "Hà Nội",
+                        "addressCountry": "VN"
+                      }
                     },
-                    "address": {
-                      "@type": "PostalAddress",
-                      "streetAddress": "Đồng Xung, Đồng Tân",
-                      "addressLocality": "Ứng Hòa",
-                      "addressRegion": "Hà Nội",
-                      "addressCountry": "VN"
+                    {
+                      "@context": "https://schema.org",
+                      "@type": "WebSite",
+                      "@id": "https://giangnoitiet.vn/#website",
+                      "url": "https://giangnoitiet.vn",
+                      "name": "Giang Nội Tiết",
+                      "description": "Chuyên gia tư vấn tiểu đường thai kỳ miễn phí",
+                      "publisher": {
+                        "@id": "https://giangnoitiet.vn/#organization"
+                      },
+                      "potentialAction": [{
+                        "@type": "SearchAction",
+                        "target": {
+                          "@type": "EntryPoint",
+                          "urlTemplate": "https://giangnoitiet.vn/search?q={search_term_string}"
+                        },
+                        "query-input": "required name=search_term_string"
+                      }],
+                      "mainEntity": {
+                        "@type": "ItemList",
+                        "itemListElement": createSiteNavigation(posts)
+                      }
                     }
-                  })
+                  ])
                 }}
               />
             </Head>
